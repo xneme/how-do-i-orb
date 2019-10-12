@@ -4,7 +4,7 @@ version: 2.1
 # release must exist; you'll need to publish manually at least once)
 # you can use scripts/publish-alpha.sh to publish a @dev:alpha release
 orbs:
-  <orb-name>: <orb-namespace>/<orb-name>@dev:alpha
+  <orb-name>: xneme/how-do-i-orb@dev:alpha
   orb-tools: circleci/orb-tools@8.27.3
 
 workflows:
@@ -26,7 +26,7 @@ workflows:
       # store CIRCLE_TOKEN as a project env var or Contexts resource
       # if using Contexts, add your context below
       - orb-tools/publish-dev:
-          orb-name: <orb-namespace>/<orb-name>
+          orb-name: xneme/how-do-i-orb
           requires:
             - orb-tools/pack
 
@@ -66,7 +66,6 @@ workflows:
   #     # - once, for integration tests triggered by non-master-branch commits
   #     # - and again, for tests triggered by commits to master
   #     # - only commits to master should potentially trigger a prod release
-
   #     # patch, minor, or major publishing
   #     - orb-tools/dev-promote-prod:
   #         name: dev-promote-patch
@@ -80,7 +79,6 @@ workflows:
   #             ignore: /.*/
   #           tags:
   #             only: /master-patch.*/
-
   #     - orb-tools/dev-promote-prod:
   #         name: dev-promote-minor
   #         release: minor
@@ -94,7 +92,6 @@ workflows:
   #             ignore: /.*/
   #           tags:
   #             only: /master-minor.*/
-
   #     - orb-tools/dev-promote-prod:
   #         name: dev-promote-major
   #         release: major
